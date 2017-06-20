@@ -15,27 +15,29 @@ Keep track of how many guesses the user has taken, and when the game ends, print
 import random
 
 answer = random.randint(1,9)
-guess = int(raw_input("Guess a number 1 - 9! Type exit if you want to leave game: "))
-
+guess = raw_input("Guess a number 1 - 9! Type exit if you want to leave game: ")
 
 if guess == "exit":
     print "GAME OVER!!"
-if guess == answer:
-    print "YAYY!! YOU GUESSED RIGHT"
+    quit()
 
-if guess != answer:
+for solution  in range (0,3):
+    #guess = int(guess)
+    if int(guess) == answer:
+        print "YAYY!! YOU GUESSED RIGHT"
+
+    if int(guess) != answer:
         print "YOU'RE HORRIBLE AT THIS.JK TRY AGAIN"
 
-if guess < answer:
-    print "YOUR GUESS IS TOO LOW. GUESS HIGHER!!"
-if guess > answer:
-    print "YOUR GUESS IS TOO HIGH. GUESS LOWER!!"
-if guess == answer:
-    print "YoU ArE CoRRecT!!!! I AM SO PROUD OF YOU!!"
+    if int(guess) < answer:
+        print "YOUR GUESS IS TOO LOW. GUESS HIGHER!!"
+    if int(guess) > answer:
+        print "YOUR GUESS IS TOO HIGH. GUESS LOWER!!"
+    if int(guess) == answer:
+        print "YoU ArE CoRRecT!!!! I AM SO PROUD OF YOU!!"
 
-if guess != answer:
-    print int(raw_input("Guess a number 1 - 9! Type exit if you want to leave game: "))
-
+    if int(guess)!= answer:
+        guess = (raw_input("Guess a number 1 - 9! Type exit if you want to leave game: "))
 
 
 
