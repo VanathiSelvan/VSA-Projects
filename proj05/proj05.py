@@ -1,86 +1,125 @@
-# Name:
-# Date:
 
-# proj05: functions and lists
+# num = raw_input("What number do you want to find divisors for: ")
 
-# Part I
-
-def divisors(num):
-    """
-    Takes a number and returns all divisors of the number, ordered least to greatest
-    :param num: int
-    :return: list (int)
-    """
-    return 0
-
+def divisors (num):
+   myList = []
+   c = int(num)
+   for c in range (1, num + 1):
+       a = int(num) % c
+       if a == 0:
+           myList.append(c)
+       c = c - 1
+   return myList
+print divisors(8)
+a = divisors
 def prime(num):
-    """
-    Takes a number and returns True if the number is prime, otherwise False
-    :param num: int
-    :return: bool
-    """
-    return False
+    myList = divisors(num)
+    length = len(myList)
+    if length == 2:
+        return True
+    else:
+        return False
 
-# Part II
-
+import random
+lst1 = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+lst2= [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+list = [1, 2 ,1 ,1 ,1 ,3 ,2 ,1 ,2 ,1 ,2]
+nextnum = 0
+for number in list:
+    list[nextnum] = random.randint(1,99)
+    nextnum = nextnum + 1
+print list
 def intersection(lst1, lst2):
-    """
-    Takes two lists and returns a list of the elements in common between the lists
-    :param lst1: list, any type
-    :param lst2: list, any type
-    :return: list, any type
-    """
-    return ["test"]
+    myList = []
+    for numbers in lst1:
+        if numbers in lst2:
+            myList.append(numbers)
+    print myList
+    return myList
 
-# Part III
 
 def find_ab(side1, side2, side3):
-    """
-    Takes three side lengths an returns two smallest in a list
-    :param side1: int or float
-    :param side2: int or float
-    :param side3: int or float
-    :return: list of 2 ints or floats
-    """
-    return [0, 0]
+    if side1 > side2 and side1 > side3:
+        return [side2,side3]
+    elif side2 > side1 and side2 > side3:
+        return [side1,side3]
+    elif side3 > side1 and side3 > side2:
+        return [side1,side2]
 
 def find_c(side1, side2, side3):
-    """
-    Takes three side lengths an returns the largest
-    :param side1: int or float
-    :param side2: int or float
-    :param side3: int or float
-    :return: int or float
-    """
-    return 0
-
-def square(side):
-    """
-    Takes a side length and returns the side length squared
-    :param side: int or float
-    :return: int or float
-    """
-    return 0
-
+    if side1 > side2 and side1 > side3:
+        return side1
+    elif side2 > side1 and side2 > side3:
+        return side2
+    elif side3 > side1 and side3 > side2:
+        return side3
+def square(side1):
+    return side1 * side1
 def pythagorean(a,b,c):
-    """
-    Takes three side lengths and returns true if a^2 + b^2 = c^2, otherwise false
-    :param a: int or float
-    :param b: int or float
-    :param c: int or float
-    :return: bool
-    """
-    return False
-
+    if square(a) + square(b) == square(c):
+        return True
+    else:
+        return False
 def is_right(side1, side2, side3):
-    """
-    Takes three side lengths and returns true if triangle is right
-    :param side1: int or float
-    :param side2: int or float
-    :param side3: int or float
-    :return: bool
-    """
-    return False
+    small = find_ab(side1,side2,side3)
+    a = small[0]
+    b = small[1]
+    c = find_c(side1,side2,side3)
+    p = pythagorean(a,b,c)
+    return p
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # TESTS
 # Feel free to add your own tests as needed!
