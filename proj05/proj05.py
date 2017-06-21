@@ -1,73 +1,25 @@
+# Name:
+# Date:
 
-# num = raw_input("What number do you want to find divisors for: ")
+# proj05: functions and lists
 
-def divisors (num):
-   myList = []
-   c = int(num)
-   for c in range (1, num + 1):
-       a = int(num) % c
-       if a == 0:
-           myList.append(c)
-       c = c - 1
-   return myList
-print divisors(8)
-a = divisors
+# Part I
+
+def divisors(num):
+    """
+    Takes a number and returns all divisors of the number, ordered least to greatest
+    :param num: int
+    :return: list (int)
+    """
+    return 0
+
 def prime(num):
-    myList = divisors(num)
-    length = len(myList)
-    if length == 2:
-        return True
-    else:
-        return False
-for number in list:
-import random
-answer = random.randint(1,99)
-
-a = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
-b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-def intersection(lst1, lst2):
-    myList = []
-    for numbers in lst1:
-        if numbers in lst2:
-            myList.append(numbers)
-        return myList
-print intersection
-
-
-
-
-
-
-
-
-#return ["test"]
-
-# """
-#        Takes two lists and returns a list of the elements in common between the lists
-#        :param lst1: list, any type
-#        :param lst2: list, any type
-#        :return: list, any type
-#        """
-#
-
-
-
-
-
-
-
-#     Takes a number#while c > 0
-# Takes a number and returns all divisors of the number, ordered least to greatest
-#:param num: int
-# :return: list (int)
- #and returns all divisors of the number, ordered least to greatest
-#     :param num: int
-#     :return: list (int)
-# #      """
-#    Takes a number and returns True if the number is prime, otherwise False
-#    :return: bool
-#    """
-#    return False
+    """
+    Takes a number and returns True if the number is prime, otherwise False
+    :param num: int
+    :return: bool
+    """
+    return False
 
 # Part II
 
