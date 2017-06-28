@@ -49,6 +49,7 @@ class Position(object):
 # === Problems 1
 
 class RectangularRoom(object):
+
     """
     A RectangularRoom represents a rectangular region containing clean or dirty
     tiles.
@@ -65,7 +66,9 @@ class RectangularRoom(object):
         width: an integer > 0
         height: an integer > 0
         """
-        raise NotImplementedError
+
+        self.width = width
+        self.height = height
     
     def cleanTileAtPosition(self, pos):
         """
@@ -75,18 +78,36 @@ class RectangularRoom(object):
 
         pos: a Position
         """
+        Cleanedtiles = []
+        self.pos = (m, n)
+        if robot in pos:
+            Cleanedtiles.append(self.pos)
+            print Cleanedtiles
+            return True
+        else:
+            print "dirty"
+            return False
+
+
         raise NotImplementedError
 
     def isTileCleaned(self, m, n):
-        """
-        Return True if the tile (m, n) has been cleaned.
 
-        Assumes that (m, n) represents a valid tile inside the room.
+        if robot in (m, n):
+            return True
+        else:
+            return False
 
-        m: an integer
-        n: an integer
-        returns: True if (m, n) is cleaned, False otherwise
-        """
+
+        # """
+        # Return True if the tile (m, n) has been cleaned.
+        #
+        # Assumes that (m, n) represents a valid tile inside the room.
+        #
+        # m: an integer
+        # n: an integer
+        # returns: True if (m, n) is cleaned, False otherwise
+        # """
         raise NotImplementedError
     
     def getNumTiles(self):
@@ -95,6 +116,7 @@ class RectangularRoom(object):
 
         returns: an integer
         """
+        
         raise NotImplementedError
 
     def getNumCleanedTiles(self):
@@ -185,7 +207,9 @@ class Robot(object):
         been cleaned.
         """
         raise NotImplementedError
-
+testRoom = RectangularRoom(77,24)
+print testRoom.width
+print testRoom.height
 
 # === Problem 2
 class StandardRobot(Robot):
@@ -229,10 +253,10 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
 
 # === Problem 4
 #
-# 1) How long does it take to clean 80% of a 20�20 room with each of 1-10 robots?
+# 1) How long does it take to clean 80% of a 20x20 room with each of 1-10 robots?
 #
 # 2) How long does it take two robots to clean 80% of rooms with dimensions 
-#	 20�20, 25�16, 40�10, 50�8, 80�5, and 100�4?
+#	 20x20, 25x16, 40x10, 50x8, 80x5, and 100x4?
 
 def showPlot1():
     """
