@@ -99,10 +99,10 @@ class WordTrigger(Trigger):
             story=story.replace(item, ' ')
         story=story.split(' ')
         if self.word in story:
-            print True
+            #print True
             return True
         else:
-            print False
+            #print False
             return False
 
 
@@ -235,9 +235,10 @@ import thread
 def main_thread(p):
     # A sample trigger list - you'll replace
     # this with something more configurable in Problem 11
-    t1 = SubjectTrigger("Trump")
-    t2 = SummaryTrigger("Vanderbilt")
-    t3 = PhraseTrigger("Net Neutrality")
+    ans = raw_input("Enter a subject: ")
+    t1 = SubjectTrigger(ans)
+    t2 = SummaryTrigger(ans)
+    t3 = PhraseTrigger(ans)
     t4 = OrTrigger(t2, t3)
     triggerlist = [t1, t4]
     
