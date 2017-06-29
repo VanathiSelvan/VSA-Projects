@@ -197,12 +197,10 @@ class Robot(object):
         room:  a RectangularRoom object.
         speed: a float (speed > 0)
         """
-
-
         self.room = room
         self.speed = speed
-        0.0
-
+        self.position = self.room.getRandomPosition()
+        self.direction = 0.0
 
     def getRobotPosition(self):
         """
@@ -210,8 +208,7 @@ class Robot(object):
 
         returns: a Position object giving the robot's position.
         """
-
-        return self.pos
+        return self.position
 
     def getRobotDirection(self):
         """
@@ -221,6 +218,7 @@ class Robot(object):
         degrees, 0 <= d < 360.
 
         """
+        return self.direction
 
 
     def setRobotPosition(self, position):
@@ -229,7 +227,7 @@ class Robot(object):
 
         position: a Position object.
         """
-        raise NotImplementedError
+        self.position = position
 
     def setRobotDirection(self, direction):
         """
@@ -237,7 +235,8 @@ class Robot(object):
 
         direction: integer representing an angle in degrees
         """
-        raise NotImplementedError
+
+        self.direction = direction
 
     def updatePositionAndClean(self):
         """
@@ -247,6 +246,16 @@ class Robot(object):
         been cleaned.
         """
         raise NotImplementedError
+
+
+
+
+walle = Robot(testRoom, 8)
+walle.setRobotDirection(8)
+walle.setRobotPosition(2)
+
+print "direction is", walle.getRobotDirection()
+print "position is", walle.getRobotPosition()
 
 # === Problem 2
 class StandardRobot(Robot):
@@ -263,7 +272,13 @@ class StandardRobot(Robot):
         Move the robot to a new position and mark the tile it is on as having
         been cleaned.
         """
-        raise NotImplementedError
+
+        self.getNewPosition(self.getRobotDirection(), self.getRobotSpeed())
+
+
+
+
+        #raise NotImplementedError
 
 # === Problem 3
 
